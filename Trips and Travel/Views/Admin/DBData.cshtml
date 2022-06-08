@@ -1,0 +1,78 @@
+﻿@model Trips_and_Travel.ViewModel.Multiple
+
+@{
+    ViewBag.Title = "DBData";
+}
+
+<ul class="nav nav-pills">
+    <li class="nav-item ">
+        <a class="nav-link active rounded-0" data-toggle="pill" href="#home">Posts</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link rounded-0" data-toggle="pill" href="#menu1">Users</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane container active p-0" id="home">
+        <h5 class="text-uppercase p-2 text-center">List of Posts</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().Title)</th>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().Details)</th>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().Destination)</th>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().Date)</th>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().PostDate)</th>
+                    <th>@Html.DisplayNameFor(m => Model.posting.FirstOrDefault().Id)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model.posting)
+                {
+                    <tr>
+                        <td>@employee.Title</td>
+                        <td>@employee.Details</td>
+                        <td>@employee.Destination</td>
+                        <td>@employee.Date</td>
+                        <td>@employee.PostDate</td>
+                        <td>@employee.Id</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane container fade p-0" id="menu1">
+        <h5 class="text-uppercase p-2 text-center">List of Users</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().userName)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Fname)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Lname)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Email)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Password)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().phoneNumber)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Id)</th>
+                    <th>@Html.DisplayNameFor(m => Model.use.FirstOrDefault().Role)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model.use)
+                {
+                <tr>
+                    <td>@employee.userName</td>
+                    <td>@employee.Fname</td>
+                    <td>@employee.Lname</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.Password</td>
+                    <td>@employee.phoneNumber</td>
+                    <td>@employee.Id</td>
+                    <td>@employee.Role</td>
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div> 
+</div>  

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="        background-image: url(../../Images/T7.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: 250px;
+    ">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #000313" >
+        <div class="container">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index", "Traveler")" class="btn btn-success" style="margin-right:00px;">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Home
+                </a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+               
+                <ul class="nav navbar-nav" style="margin-left:900px;">
+                    <li>@Html.ActionLink("Register", "Register", "Users")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Users")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content" style="
+        font-size: 20px;
+        color: sandybrown
+    ">
+        @RenderBody()
+        
+        <footer class="nav navbar-fixed-bottom" style="color:yellow">
+            <div class="navbar navbar-inverse navbar-fixed-bottom" style= "background-color: #000313;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <h3>FCAIH - Internet Applications 2021 &copy;</h3>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
